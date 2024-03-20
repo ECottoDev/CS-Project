@@ -1,0 +1,30 @@
+/**
+* navigationBar.js
+*
+* @author Edwin Cotto <cottosoftwaredevelopment@gmail.com>>
+* @copyright Edwin Cotto, All rights reserved.
+*
+* @version 2024-March-20 initial version
+*/
+.navigationBar_logo {
+  width: 7rem;
+  height: 7rem;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.navigationBar_logo > * {
+  width: 7rem;
+  height: 7rem;
+}
+.navigationBar_puprLogo {
+  width: 20rem;
+  height: 7rem;
+  margin-left: 1rem;
+  background-color: transparent;
+  border-color: transparent;
+}
+.navigationBar_puprLogo > * {
+  width: 20rem;
+  height: 7rem;
+}

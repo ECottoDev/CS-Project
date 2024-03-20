@@ -6,4 +6,5 @@
 *
 * @version 2024-March-11 initial version
 */
-@import './frontEnd/components/displayBox/displayBox.css';
+@import './frontEnd/stylesheets/containers.css';
+@import './frontEnd/stylesheets/components.css';

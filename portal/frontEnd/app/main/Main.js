@@ -12,6 +12,7 @@ import { routes } from "../../helpers/routes.js";
 import { addClasses, addEvent, appendChildren, createButton, createElementContainer, createSVGButton, createScrollArea, detachChildren, getURLParam, navigate, parseRequestURL } from "../../helpers/basicElements/basicElements.js";
 import { FirstPage } from "../../views/firstPage/FirstPage.js";
 import { SecondPage } from "../../views/secondPage/SecondPage.js";
+import { NavigationBar } from "../../containers/navigationBar/NavigationBar.js";
 
 window.onload = async () => { appendChildren(document.getElementById('root'), [new Main().view]); }
 
@@ -38,7 +39,7 @@ export class Main {
     async setView() {
         appendChildren(detachChildren(this.view), [
             appendChildren(addClasses(createElementContainer(), 'index_navBarContainer'), [
-                addEvent(createButton('Home'), () => { this.setNavState(routes.sec_view); }),
+                new NavigationBar(this.appProps).view,
             ]),
             this.container,
         ]);
