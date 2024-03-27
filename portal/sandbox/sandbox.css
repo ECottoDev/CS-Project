@@ -1,0 +1,7 @@
+body {
+    filter: grayscale(100%);
+    transition: filter 1s;
+}
+body:hover {
+    filter: grayscale(0%);
+} 
