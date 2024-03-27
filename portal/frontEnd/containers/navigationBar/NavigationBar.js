@@ -9,6 +9,7 @@
 
 import { addClasses, addEvent, appendChildren, createButton, createElementContainer, createImgButton } from "../../helpers/basicElements/basicElements.js";
 import { routes } from "../../helpers/routes.js";
+import { ProfessorTile } from "../tile/professorTile/ProfessorTile.js";
 
 export class NavigationBar {
     constructor(parentProps) {
@@ -19,7 +20,7 @@ export class NavigationBar {
     setView() {
         appendChildren(this.view, [
             addEvent(addClasses(createImgButton('frontEnd/assets/images/polytechnicLogo.png', { title: 'PUPR Logo' }), 'navigationBar_logo'), () => { this.parentProps.setNavState(routes.HOME_VIEW) }),
-            addEvent(addClasses(createImgButton('frontEnd/assets/images/PUPRLogo.png', { title: 'PUPR Logo' }), 'navigationBar_puprLogo'), () => { this.parentProps.setNavState(routes.sec_view) }),
+            addEvent(addClasses(createImgButton('frontEnd/assets/images/PUPRLogo.png', { title: 'PUPR Logo' }), 'navigationBar_puprLogo'), () => { this.parentProps.setNavState(routes.sec_view) })
         ]);
     }
 }
