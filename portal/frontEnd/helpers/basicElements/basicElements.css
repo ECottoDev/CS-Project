@@ -283,9 +283,9 @@
   color: var(--grey);
 }
 
-[type='search']::-webkit-search-cancel-button {
+[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
-  background-image: url('../../assets/icons/Delete.svg');
+  background-image: url("../../assets/icons/Delete.svg");
   height: 1.5rem;
   width: 1.5rem;
   padding-right: 0rem;
@@ -477,7 +477,7 @@
 }
 
 .getSearchInput__input {
-  background-image: url('../../assets/icons/Search.svg');
+  background-image: url("../../assets/icons/Search.svg");
   background-repeat: no-repeat;
   background-position: calc(100% - 1rem) 50%;
   background-size: 1.5rem 1.5rem;
@@ -490,7 +490,7 @@
 
 .getSearchInput__input::-webkit-search-cancel-button {
   -webkit-appearance: none;
-  background-image: url('../../assets/icons/Delete.svg');
+  background-image: url("../../assets/icons/Delete.svg");
   height: 1.5rem;
   width: 1.5rem;
   padding-right: 0.2rem;

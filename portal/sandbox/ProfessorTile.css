@@ -1,0 +1,73 @@
+.formContainer,
+.elementContainer {
+  width: fit-content;
+  height: fit-content;
+  display: block;
+}
+
+.elementContainer-leftBorder {
+  border-left: var(--default_border);
+}
+
+.elementContainer-topBorder {
+  border-top: var(--default_border);
+}
+
+.elementContainer-bottomBorder {
+  border-bottom: var(--default_border);
+}
+
+.elementContainer-rightBorder {
+  border-right: var(--default_border);
+}
+
+.elementContainer-allBorder {
+  border: var(--default_border);
+}
+
+.tileContainer {
+  padding: 1rem;
+  border-radius: var(--rounder_border_radius);
+  background-color: var(--tile_fill);
+  border-color: var(--lighter_grey);
+  overflow: hidden;
+}
+
+.tileContainer-hover:hover {
+  box-shadow: var(--box-shadow-hover);
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+.scrollArea {
+  overflow: hidden;
+  scroll-behavior: smooth;
+  height: fit-content;
+  width: 100%;
+  /* padding: 1.5rem; */
+}
+
+.scrollArea:hover {
+  overflow: auto;
+}
+.button:enabled:hover {
+  color: var(--theme_color);
+  background-color: rgb(255, 255, 255);
+  border-color: #adadad;
+  transition: 0.5s;
+  opacity: 1;
+}
+
+.button-light:enabled:hover {
+  background-color: var(--theme_color);
+  color: white;
+}
+
+.imgButton {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.imgButton:hover {
+  filter: grayscale(0%);
+}
