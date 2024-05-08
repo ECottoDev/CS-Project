@@ -1,18 +1,20 @@
 /**
-* ProfessorTile.js
-* @author Gildo Colon <terminator09763@gmail.com>
-* @copyright Gildo Colon, All rights reserved.
+* ProfessorBiography.js
 *
-* @version 2024-March-20 initial version
+* @author Edwin Cotto <cottosoftwaredevelopment@gmail.com>
+* @copyright Edwin Cotto, All rights reserved.
+*
+* @version 2024-April-29 initial version
 */
 
-import { addClasses, appendChildren, createElementContainer, createHeadingText, createImg, createTileContainer } from "../../../helpers/basicElements/basicElements.js";
+import { addClasses, addEvent, appendChildren, createButton, createElementContainer, createHeadingText, createImg, createPillBox } from "../../helpers/basicElements/basicElements.js";
 
-export class ProfessorTile {
-    constructor(parentProps, professorData) {
+export class ProfessorBiography {
+    constructor(parentProps, professorData, close = () => { }) {
         this.parentProps = parentProps;
         this.professorData = professorData;
-        this.view = addClasses(createTileContainer(), 'professorTile_view');
+        this.close = close;
+        this.view = addClasses(createPillBox(), 'professorBiography_view');
         this.setView();
     }
     setView() {
@@ -23,7 +25,8 @@ export class ProfessorTile {
                 addClasses(createHeadingText(this.professorData.professorEmail), 'professorTile_email'),
                 addClasses(createHeadingText(this.professorData.professorOffice), 'professorTile_office'),
                 addClasses(createHeadingText(this.professorData.professorOfficeHours), 'professorTile_officeHours')]
-            )
+            ),
+            addEvent(createButton('close'), () => { this.close() })
         ])
     }
 }

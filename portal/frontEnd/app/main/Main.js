@@ -10,9 +10,8 @@
 import { DisplayBox } from "../../components/displayBox/DisplayBox.js";
 import { routes } from "../../helpers/routes.js";
 import { addClasses, addEvent, appendChildren, createButton, createElementContainer, createSVGButton, createScrollArea, detachChildren, getURLParam, navigate, parseRequestURL } from "../../helpers/basicElements/basicElements.js";
-import { FirstPage } from "../../views/firstPage/FirstPage.js";
-import { SecondPage } from "../../views/secondPage/SecondPage.js";
 import { NavigationBar } from "../../containers/navigationBar/NavigationBar.js";
+import { ProfessorRoster } from "../../views/professorRoster/ProfessorRoster.js";
 
 window.onload = async () => { appendChildren(document.getElementById('root'), [new Main().view]); }
 
@@ -23,7 +22,7 @@ export class Main {
         this.displayBox = new DisplayBox(root);
         this.setNavObj();
         this.setAppProps();
-        this.container = addClasses(createScrollArea(), 'main_container');
+        this.container = addClasses(createElementContainer(), 'main_container');
         this.view = addClasses(createElementContainer(), 'main_view');
         this.setView();
     }
@@ -38,10 +37,8 @@ export class Main {
     }
     async setView() {
         appendChildren(detachChildren(this.view), [
-            appendChildren(addClasses(createElementContainer(), 'index_navBarContainer'), [
-                new NavigationBar(this.appProps).view,
-            ]),
-            this.container,
+            appendChildren(addClasses(createElementContainer(), 'main_navBarContainer'), [new NavigationBar(this.appProps).view,]),
+            this.container
         ]);
         this.setNavState(this.navState, this.setParams());
     }
@@ -50,8 +47,7 @@ export class Main {
      */
     setNavObj() {
         this.navigation = {
-            [routes.HOME_VIEW]: () => new FirstPage(this.appProps).view,
-            [routes.sec_view]: () => new SecondPage(this.appProps).view,
+            [routes.HOME_VIEW]: () => new ProfessorRoster(this.appProps).view,
         }
     }
     /**

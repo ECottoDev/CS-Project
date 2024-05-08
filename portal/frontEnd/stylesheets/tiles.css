@@ -1,9 +1,10 @@
 /**
-* component.js
+* tiles.js
 *
 * @author Edwin Cotto <cottosoftwaredevelopment@gmail.com>>
 * @copyright Edwin Cotto, All rights reserved.
 *
-* @version 2024-March-11 initial version
+* @version 2024-April-22 initial version
 */
-@import '../components/displayBox/displayBox.css';
+
+@import '../containers/tile/professorTile/professorTile.css';

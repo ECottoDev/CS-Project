@@ -6,25 +6,17 @@
 *
 * @version 2024-March-20 initial version
 */
+.navigationBar_view {
+  display: flex;
+}
 .navigationBar_logo {
   width: 7rem;
-  height: 7rem;
+  height: 10rem;
   background-color: transparent;
   border-color: transparent;
 }
 
 .navigationBar_logo > * {
-  width: 7rem;
-  height: 7rem;
-}
-.navigationBar_puprLogo {
-  width: 20rem;
-  height: 7rem;
-  margin-left: 1rem;
-  background-color: transparent;
-  border-color: transparent;
-}
-.navigationBar_puprLogo > * {
-  width: 20rem;
-  height: 7rem;
+  width: auto;
+  height: 10rem;
 }

@@ -712,3 +712,8 @@ export function searchArray(array, value, ...props) {
     });
     return results.sort(sortArrayOfObj('-hits')).map(item => item.result);
 }
+
+export function getSearchInput(callback = () => { }, placeholder, { ms = 1000 } = {}) {
+    const input = addEvent(addClasses(createInputBar({ type: 'search', placeholder }), 'getSearchInput__input'), () => { input.classList[input.value ? 'add' : 'remove']('getSearchInput__input-cancel'); }, 'input');
+    return addEvent(input, delayedListener(event => { callback(event.target.value); }, ms), 'input');
+}

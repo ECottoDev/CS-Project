@@ -19,8 +19,7 @@ export class NavigationBar {
     }
     setView() {
         appendChildren(this.view, [
-            addEvent(addClasses(createImgButton('frontEnd/assets/images/polytechnicLogo.png', { title: 'PUPR Logo' }), 'navigationBar_logo'), () => { this.parentProps.setNavState(routes.HOME_VIEW) }),
-            addEvent(addClasses(createImgButton('frontEnd/assets/images/PUPRLogo.png', { title: 'PUPR Logo' }), 'navigationBar_puprLogo'), () => { this.parentProps.setNavState(routes.sec_view) })
+            addEvent(addClasses(createImgButton('frontEnd/assets/images/polytechnicLogo.png', { title: 'PUPR Logo', hover: false }), 'navigationBar_logo'), () => { this.parentProps.setNavState(routes.HOME_VIEW) }),
         ]);
     }
 }
