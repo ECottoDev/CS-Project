@@ -27,6 +27,7 @@ export class ProfessorRoster {
     async fetch() {
         const response = await fetch('/backEnd/professorInfo.php')
         const data = await response.json();
+        console.log(data);
         this.professorData = await data;
         this.setView();
     }

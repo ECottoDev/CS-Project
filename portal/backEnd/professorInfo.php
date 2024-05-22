@@ -8,26 +8,25 @@
 * @version 2024-April-22 initial version
 */
 
-$professorInfo=[
-    [
-        "professorName"=>"Trisha",
-        "professorEmail"=>"tren@email.com",
-        "professorOffice"=>"Building 132, Room 101",
-        "professorOfficeHours"=>"Monday 10:21am-12:20pm, Wednesday 1:20pm-3:20pm, Friday 10:30am-12:00pm"
-    ],
-    [
-    "professorName"=>"Edwin Cotto",
-    "professorEmail"=>"example@email.com",
-    "professorOffice"=>"Building 1, Room 101",
-    "professorOfficeHours"=>"Monday 10:00am-12:00pm, Wednesday 1:00pm-3:00pm, Friday 10:00am-12:00pm"
-    ],
-    [
-        "professorName"=>"Tristan",
-        "professorEmail"=>"mple@email.com",
-        "professorOffice"=>"Building 122, Room 101",
-        "professorOfficeHours"=>"Monday 10:01am-12:00pm, Wednesday 1:20pm-3:00pm, Friday 10:04am-12:00pm"
-        ]
-];
+//connect to database and get the professor information
+$connection = mysqli_connect("localhost", "Edwin", "PUPRFaculty2024", "PUPR_Faculty");
+if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+};
 
+//get the professor information from professorInfo table
+$result = mysqli_query($connection, "SELECT * FROM professors");
+
+//create an array to store the professor information
+$professorInfo = array();
+while ($row = mysqli_fetch_array($result)) {
+    $professorInfo[] = $row;
+};
+
+//return the professor information
 echo json_encode($professorInfo);
+
+//close the connection
+mysqli_close($connection);
+
 ?>

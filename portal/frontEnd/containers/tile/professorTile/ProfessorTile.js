@@ -6,7 +6,7 @@
 * @version 2024-March-20 initial version
 */
 
-import { addClasses, appendChildren, createElementContainer, createHeadingText, createImg, createTileContainer } from "../../../helpers/basicElements/basicElements.js";
+import { addClasses, appendChildren, createElementContainer, createHeadingText, createImg, createTileContainer, toTitleCase } from "../../../helpers/basicElements/basicElements.js";
 
 export class ProfessorTile {
     constructor(parentProps, professorData) {
@@ -19,10 +19,15 @@ export class ProfessorTile {
         appendChildren(this.view, [
             addClasses(createImg("/frontEnd/assets/images/ProfessorTile.png", "professor image"), 'professorTile_image'),
             appendChildren(addClasses(createElementContainer(), 'professorTile_info'), [
-                addClasses(createHeadingText(this.professorData.professorName), 'professorTile_name'),
-                addClasses(createHeadingText(this.professorData.professorEmail), 'professorTile_email'),
-                addClasses(createHeadingText(this.professorData.professorOffice), 'professorTile_office'),
-                addClasses(createHeadingText(this.professorData.professorOfficeHours), 'professorTile_officeHours')]
+                appendChildren(addClasses(createElementContainer(), 'professorTile_name'), [
+                    addClasses(createHeadingText(toTitleCase(this.professorData.first_name)), 'professorTile_firstName'),
+                    addClasses(createHeadingText(toTitleCase(this.professorData.last_name)), 'professorTile_lastName'),
+                ]),
+                addClasses(createHeadingText(this.professorData.email), 'professorTile_email'),
+                addClasses(createHeadingText(this.professorData.position), 'professorTile_position'),
+                addClasses(createHeadingText(this.professorData.department), 'professorTile_department'),
+                addClasses(createHeadingText(this.professorData.degrees), 'professorTile_degrees')
+            ]
             )
         ])
     }
