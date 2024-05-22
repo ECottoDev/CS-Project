@@ -9,7 +9,7 @@
 */
 
 //connect to database and get the professor information
-$connection = mysqli_connect("localhost", "Edwin", "PUPRFaculty2024", "PUPR_Faculty");
+$connection = mysqli_connect("localhost", "root", "PUPRFaculty2024", "PUPR_Faculty");
 if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
 };
