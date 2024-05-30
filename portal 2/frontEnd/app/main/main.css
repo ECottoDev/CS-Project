@@ -1,0 +1,24 @@
+/**
+* main.js
+*
+* @author Edwin Cotto <cottosoftwaredevelopment@gmail.com>>
+* @copyright Edwin Cotto, All rights reserved.
+*
+* @version 2024-April-22 initial version
+*/
+
+.main_view {
+  width: 100%;
+  height: 100%;
+  padding: 2rem 2rem 2rem 2rem;
+  margin-top: 1rem;
+  background: url('/frontEnd/assets/images/polytechnicUniversity.jpg') no-repeat;
+  background-size: cover;
+}
+.main_navBarContainer {
+  padding: 1rem;
+}
+.main_container {
+  width: 100%;
+  height: 100%;
+}

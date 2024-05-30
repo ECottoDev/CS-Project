@@ -1,0 +1,22 @@
+/**
+* navigationBar.js
+*
+* @author Edwin Cotto <cottosoftwaredevelopment@gmail.com>>
+* @copyright Edwin Cotto, All rights reserved.
+*
+* @version 2024-March-20 initial version
+*/
+.navigationBar_view {
+  display: flex;
+}
+.navigationBar_logo {
+  width: 7rem;
+  height: 10rem;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.navigationBar_logo > * {
+  width: auto;
+  height: 10rem;
+}

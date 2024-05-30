@@ -6,7 +6,7 @@
 * @version 2024-March-20 initial version
 */
 
-import { addClasses, appendChildren, createElementContainer, createHeadingText, createImg, createParagraph, createTextArea, createTileContainer, getStringDialogBoxView, newLineAtEveryCharacter, toTitleCase } from "../../../helpers/basicElements/basicElements.js";
+import { addClasses, appendChildren, createElementContainer, createHeadingText, createImg, createTileContainer, toTitleCase } from "../../../helpers/basicElements/basicElements.js";
 
 export class ProfessorTile {
     constructor(parentProps, professorData) {
@@ -25,9 +25,8 @@ export class ProfessorTile {
                 ]),
                 addClasses(createHeadingText(this.professorData.email), 'professorTile_email'),
                 addClasses(createHeadingText(this.professorData.position), 'professorTile_position'),
-                this.professorData.department == 'N/A' ? addClasses(createHeadingText('Unknown Department, From Orlando or Miami Campus.'), 'professorTile_department') : addClasses(createHeadingText(this.professorData.department), 'professorTile_department'),
-                addClasses(createHeadingText('Degrees:'), 'professorTile_degreesTitle'),
-                addClasses(createParagraph(newLineAtEveryCharacter(this.professorData.degrees, ';')), 'professorTile_degrees')
+                addClasses(createHeadingText(this.professorData.department), 'professorTile_department'),
+                addClasses(createHeadingText(this.professorData.degrees), 'professorTile_degrees')
             ]
             )
         ])

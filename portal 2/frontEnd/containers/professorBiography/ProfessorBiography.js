@@ -7,7 +7,7 @@
 * @version 2024-April-29 initial version
 */
 
-import { addClasses, addEvent, appendChildren, createButton, createElementContainer, createHeadingText, createImg, createParagraph, createPillBox, getStringDialogBoxView, newLineAtEveryCharacter, toTitleCase } from "../../helpers/basicElements/basicElements.js";
+import { addClasses, addEvent, appendChildren, createButton, createElementContainer, createHeadingText, createImg, createPillBox, toTitleCase } from "../../helpers/basicElements/basicElements.js";
 
 export class ProfessorBiography {
     constructor(parentProps, professorData, close = () => { }) {
@@ -27,11 +27,10 @@ export class ProfessorBiography {
                 ]),
                 addClasses(createHeadingText(this.professorData.email), 'professorTile_email'),
                 addClasses(createHeadingText(this.professorData.position), 'professorTile_position'),
-                this.professorData.department == 'N/A' ? addClasses(createHeadingText('Unknown Department, From Orlando or Miami Campus.'), 'professorTile_department') : addClasses(createHeadingText(this.professorData.department), 'professorTile_department'),
-                addClasses(createParagraph(newLineAtEveryCharacter(this.professorData.degrees, ';')), 'professorTile_degrees')
-            ]
-            ),
-            addClasses(addEvent(createButton('close'), () => { this.close() }), 'professorBiography_closeButton')
+                addClasses(createHeadingText(this.professorData.department), 'professorTile_department'),
+                addClasses(createHeadingText(this.professorData.degrees), 'professorTile_degrees')
+            ]),
+            addEvent(createButton('close'), () => { this.close() })
         ])
     }
 }

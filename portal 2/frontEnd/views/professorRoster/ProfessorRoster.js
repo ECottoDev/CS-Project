@@ -27,12 +27,13 @@ export class ProfessorRoster {
     async fetch() {
         const response = await fetch('/backEnd/professorInfo.php')
         const data = await response.json();
+        console.log(data);
         this.professorData = await data;
         this.setView();
     }
     setView() {
         appendChildren(this.view, [
-            appendChildren(addClasses(createElementContainer(), "professorRoster_scrollAreaHeader"), [addClasses(createHeadingText('Department of Computer Science and Engineering Faculty'), "professorRoster_title"),
+            appendChildren(addClasses(createElementContainer(), "professorRoster_scrollAreaHeader"), [addClasses(createHeadingText('Professor Roster'), "professorRoster_title"),
             addClasses(this.searchBar.view, "professorRoster_searchBar"),]),
 
             appendChildren(this.scrollArea, [
@@ -42,8 +43,8 @@ export class ProfessorRoster {
     }
     handleSearch() {
         let filteredTiles = this.professorData;
-        this.searchInput && (filteredTiles = searchArray(this.professorData, this.searchInput, 'first_name', 'last_name', 'email', 'position', 'department'));
-        filteredTiles.sort(sortArrayOfObj('first_name'))
+        this.searchInput && (filteredTiles = searchArray(this.professorData, this.searchInput, 'professorName'));
+        filteredTiles.sort(sortArrayOfObj('professorName'))
         return filteredTiles;
 
     }

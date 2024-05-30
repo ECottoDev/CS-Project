@@ -717,13 +717,3 @@ export function getSearchInput(callback = () => { }, placeholder, { ms = 1000 } 
     const input = addEvent(addClasses(createInputBar({ type: 'search', placeholder }), 'getSearchInput__input'), () => { input.classList[input.value ? 'add' : 'remove']('getSearchInput__input-cancel'); }, 'input');
     return addEvent(input, delayedListener(event => { callback(event.target.value); }, ms), 'input');
 }
-
-export function newLineAtEveryCharacter(str, char) {
-    // Split the string at every occurrence of the character
-    const parts = str.split(char);
-
-    // Join the parts back together with the character followed by a newline
-    const result = parts.join('\n');
-
-    return result;
-}
